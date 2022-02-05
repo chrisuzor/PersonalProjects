@@ -15,5 +15,8 @@ def in_array__(a1, a2):
     return sorted(set(s1 for s1 in a1 if any(s1 in s2 for s2 in a2)))
 
 
-
-print(in_array(["arp", "live", "strong"], ["lively", "alive", "harp", "sharp", "armstrong"]))
+print(
+    in_array(
+        ["arp", "live", "strong"], ["lively", "alive", "harp", "sharp", "armstrong"]
+    )
+)

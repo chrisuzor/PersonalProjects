@@ -1,5 +1,6 @@
 import math
 
+
 def square_numbers(number):
     return number ** 2
 

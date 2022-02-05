@@ -1,13 +1,13 @@
 def create_phone_number(n):
-    phone_number_string = ''
+    phone_number_string = ""
     i = 0
     for _ in n:
         if i == 0:
-            phone_number_string += '('
+            phone_number_string += "("
         if i == 3:
-            phone_number_string += ') '
+            phone_number_string += ") "
         if i == 6:
-            phone_number_string += '-'
+            phone_number_string += "-"
         phone_number_string += str(_)
         i += 1
     return phone_number_string
@@ -18,7 +18,7 @@ def create_phone_number_two(n):
 
 
 def create_phone_number_three(n):
-    m = ''.join(map(str, n))
+    m = "".join(map(str, n))
     return f"({m[:3]}) {m[3:6]}-{m[6:]}"
 
 

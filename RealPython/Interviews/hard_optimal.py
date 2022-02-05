@@ -1,7 +1,5 @@
-from queue import PriorityQueue
-
-
 from collections import defaultdict
+from queue import PriorityQueue
 
 
 class Link:
