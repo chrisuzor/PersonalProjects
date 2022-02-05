@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+setup.py
+chris_reader.egg-info/PKG-INFO
+chris_reader.egg-info/SOURCES.txt
+chris_reader.egg-info/dependency_links.txt
+chris_reader.egg-info/entry_points.txt
+chris_reader.egg-info/requires.txt
+chris_reader.egg-info/top_level.txt
+reader/__init__.py
+reader/__main__.py
+reader/config.txt
+reader/feed.py
+reader/viewer.py

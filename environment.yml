@@ -1,0 +1,28 @@
+name: general_python
+
+channels:
+  - conda-forge
+
+dependencies:
+  - pip
+  - python
+  - python-dotenv
+
+  # flask app
+  - Flask==1.1.2
+  - requests==2.23.0
+  - gunicorn==20.0.4
+  - pygithub
+
+  # deployment
+  - ansible==2.9.9
+  - docker-compose
+
+  # testing/pep8
+  - pre-commit
+  - pytest
+  - pytest-cov
+  - flake8
+  - isort
+  - coverage
+  - selenium
