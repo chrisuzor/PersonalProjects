@@ -24,4 +24,4 @@ def merge_k_linked_lists(linked_lists):
     return result.next
 
 
-merge_k_linked_lists([Link(1, Link(2)),Link(3, Link(4))])
+merge_k_linked_lists([Link(1, Link(2)), Link(3, Link(4))])

@@ -2,6 +2,7 @@ def show(article):
     """Show one article"""
     print(article)
 
+
 def show_list(site, titles):
     """Show list of articles"""
     print(f"The latest tutorials from {site}")
