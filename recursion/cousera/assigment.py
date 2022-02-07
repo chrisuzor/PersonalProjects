@@ -1,3 +1,6 @@
+import re
+
+
 def example_word_count():
     # This example question requires counting words in the example_string below.
     example_string = "Amy is 5 years old"
@@ -7,9 +10,6 @@ def example_word_count():
     # NotImplementedError below.
     result = example_string.split(" ")
     return len(result)
-
-
-import re
 
 
 def names():
