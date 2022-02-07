@@ -14,11 +14,12 @@ jobs:
           name: install dependencies
           command: |
             conda env create -f environment.yml --force
-            conda activate general_python
       # Step 3: run linter tests
       - run:
           name: run tests
           command:
+            conda init bash
+            source ~/.bashrc
             conda activate general_python
             flake8
             pytest -v --cov=CalculatorLibrary
