@@ -26,5 +26,4 @@ jobs:
           command: |
             export PATH="$HOME/miniconda/bin:$PATH"
             conda update -y conda
-            conda install -c anaconda flake8
-            flake8
+
