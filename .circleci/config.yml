@@ -15,7 +15,6 @@ jobs:
           command: |
             sudo apt update
             sudo apt install -y wget
-            sudo apt install lsb_release
             sudo apt install ./libffi6_3.2.1-8_amd64.deb
             cd $HOME
             wget "https://repo.anaconda.com/miniconda/Miniconda3-4.7.10-Linux-x86_64.sh" -O miniconda.sh
