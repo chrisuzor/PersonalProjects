@@ -13,13 +13,20 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            conda env create -f environment.yml --force
+            apt update
+            apt install -y wget
+            cd $HOME
+            wget "https://repo.anaconda.com/miniconda/Miniconda3-4.7.10-Linux-x86_64.sh" -O miniconda.sh
+            printf '%s' "8a324adcc9eaf1c09e22a992bb6234d91a94146840ee6b11c114ecadafc68121  miniconda.sh" | sha256sum -c
+            bash miniconda.sh -b -p $HOME/miniconda
+
       # Step 3: run linter tests
       - run:
           name: run tests
           command:
-            conda init bash
-            source ~/.bashrc
+            export PATH="$HOME/miniconda/bin:$PATH"
+            conda update -y conda
+            conda env create -f environment.yml --force
             conda activate general_python
             flake8
             pytest -v --cov=CalculatorLibrary
