@@ -1,10 +1,6 @@
 from collections import defaultdict
 
-
-student_grades = {
-    "Jack": [85, 90],
-    "Jill": [67, 70]
-}
+student_grades = {"Jack": [85, 90], "Jill": [67, 70]}
 
 
 def get_grades_naive(name):
@@ -46,4 +42,3 @@ student_grades = defaultdict(list, student_grades)
 
 def set_grades_best(name, score):
     student_grades[name].append(score)
-

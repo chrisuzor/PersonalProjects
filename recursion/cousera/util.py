@@ -2,7 +2,6 @@ import datetime as dt
 from pathlib import Path
 
 import pandas as pd
-
 from qadmin_pm_apps import io, load_budget_actual
 
 
@@ -32,7 +31,7 @@ def get_latest_raw_folder(client, source):
 
 
 def get_raw_path(filename):
-    most_recent = get_latest_raw_folder(io.get_digital_ocean_fs(), 'harvest')
+    most_recent = get_latest_raw_folder(io.get_digital_ocean_fs(), "harvest")
     return f"{most_recent}/{filename}"
 
 
@@ -56,7 +55,9 @@ def monday_this_week(tzone=dt.timezone.utc):
     # get the date of monday of this week
     monday_date = today - dt.timedelta(days=today_weekday)
     # cleanup extraneous timing
-    monday_date = monday_date.replace(hour=0, minute=0, second=0, microsecond=0)  # noqa E501
+    monday_date = monday_date.replace(
+        hour=0, minute=0, second=0, microsecond=0
+    )  # noqa E501
 
     return monday_date
 
@@ -68,7 +69,7 @@ def get_all_projects_timeless():
     # get the raw-ish data
     df = load_budget_actual()
     # extract the client_project index
-    level = df.index.get_level_values('client_project')
+    level = df.index.get_level_values("client_project")
     # convert to list, remove duplicates
     client_project = list(set(level))
     # sort alphabetically
@@ -89,15 +90,11 @@ def get_all_projects_active():
     df_client = df_client[["id", "name"]]
 
     df_project = df_project.merge(
-        df_client,
-        left_on="client_id",
-        right_on="id",
-        suffixes=("_project", "_client")
+        df_client, left_on="client_id", right_on="id", suffixes=("_project", "_client")
     )
 
     client_project_active = df_project.apply(
-        lambda v: f"{v.name_client} - {v.name_project}",
-        axis=1
+        lambda v: f"{v.name_client} - {v.name_project}", axis=1
     ).to_list()
 
     client_project_active.sort()
@@ -144,8 +141,7 @@ def get_all_projects_active_in_lookback(lookback_period=6, tzone=None):
     in the form of `client_name - project_name`
     """
     projects_lookback = get_all_projects_in_lookback(
-        lookback_period=lookback_period,
-        tzone=tzone
+        lookback_period=lookback_period, tzone=tzone
     )
     projects_active = get_all_projects_active()
 
@@ -161,7 +157,7 @@ def get_all_employees():
     # get the harvest data
     df = load_budget_actual()
     # extract the name index
-    level = df.index.get_level_values('name')
+    level = df.index.get_level_values("name")
     # convert to list, remove duplicates
     name_list = list(set(level))
     # sort alphabetically
@@ -184,7 +180,7 @@ def get_all_employees_active():
     ).str.strip()
 
     # extract the name index
-    level = df.index.get_level_values('name')
+    level = df.index.get_level_values("name")
     # convert to list, remove duplicates
     name_list = list(set(level) & set(df_people.name.unique()))
     # sort alphabetically

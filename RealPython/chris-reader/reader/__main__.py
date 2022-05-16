@@ -1,9 +1,9 @@
+import sys
 from configparser import ConfigParser
 from importlib import resources  # Python 3.7+
-import sys
 
-from reader import feed
-from reader import viewer
+from reader import feed, viewer
+
 
 def main():
     """Read the Real Python article feed"""
@@ -22,6 +22,7 @@ def main():
         site = feed.get_site(url)
         titles = feed.get_titles(url)
         viewer.show_list(site, titles)
+
 
 if __name__ == "__main__":
     main()

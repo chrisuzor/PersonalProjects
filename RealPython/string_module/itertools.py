@@ -6,6 +6,6 @@ print(next(all_ones))
 
 all_ones = it.repeat(1, times=5)
 
-friends = ['Chris', 'Joe', 'Psalm', 'Mike']
+friends = ["Chris", "Joe", "Psalm", "Mike"]
 
 print(list(it.permutations(friends, r=3)))

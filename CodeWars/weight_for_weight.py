@@ -1,5 +1,7 @@
 def order_weight(strings):
-    get_weight_tuples = [sum_digit_together(string) for string in sorted(strings.split())]
+    get_weight_tuples = [
+        sum_digit_together(string) for string in sorted(strings.split())
+    ]
     get_weight_tuples.sort(key=lambda x: x[1])
     weight_strings = [get_weight_tuple[0] for get_weight_tuple in get_weight_tuples]
     return " ".join(weight_strings)
@@ -24,7 +26,9 @@ def order_weight_one(strng):
 
 
 def order_weight_two(_str):
-    return ' '.join(sorted(sorted(_str.split(' ')), key=lambda x: sum(int(c) for c in x)))
+    return " ".join(
+        sorted(sorted(_str.split(" ")), key=lambda x: sum(int(c) for c in x))
+    )
 
 
 print(order_weight("103 123 4444 99 2000"))
