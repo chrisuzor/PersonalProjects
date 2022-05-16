@@ -11,4 +11,3 @@ for _ in range(num_rows):
 grid = [[0 for _ in range(num_columns)] for _ in range(num_rows)]
 
 print(grid)
-

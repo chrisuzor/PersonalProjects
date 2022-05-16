@@ -1,7 +1,5 @@
-from functools import reduce
+from functools import cached_property, lru_cache
 
-from functools import cached_property
-from functools import lru_cache
 # Reduce is a function that helps us combine or reduce values in an iterable into one value
 
 # print(reduce(lambda x, y: x + y, [1, 2, 3, 4]))
@@ -28,11 +26,13 @@ class Data:
 # print(d.f)
 # print(d.f)
 
+
 @lru_cache
 def fib(n):
     print(n)
     if n <= 1:
         return n
     return fib(n - 1) + fib(n - 2)
+
 
 print(fib(100))

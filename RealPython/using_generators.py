@@ -12,10 +12,10 @@ print(sum([i for i in range(1, 10001)]))
 # sum for generators
 print(sum((i for i in range(1, 10001))))
 
-'''
+"""
 if you're asked to loop through something , you should use a generator
 Also if you need a value one at a time, use a generator
-'''
+"""
 
 
 def odds(start, stop):

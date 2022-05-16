@@ -1,0 +1,4 @@
+CONTAINER ID   NAME              CPU %     MEM USAGE / LIMIT   MEM %     NET I/O          BLOCK I/O     PIDS
+6da713d373da   postgres          0.00%     30.82MiB / 5.8GiB   0.52%     199kB / 45.1kB   0B / 8.03MB   8
+21c582bec652   strange_solomon   0.00%     908KiB / 5.8GiB     0.01%     1.22kB / 0B      0B / 0B       2
+6e7bc10e5a6d   my-redis          0.10%     2.273MiB / 5.8GiB   0.04%     1.15kB / 0B      98.3kB / 0B   5
