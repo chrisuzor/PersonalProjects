@@ -6,13 +6,23 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
+<<<<<<< HEAD
         ("projects", "0001_initial"),
+=======
+        ('projects', '0001_initial'),
+>>>>>>> 94a81eb432a52582e503668e85b4cc9249584108
     ]
 
     operations = [
         migrations.AlterField(
+<<<<<<< HEAD
             model_name="project",
             name="image",
             field=models.FilePathField(path="/img"),
+=======
+            model_name='project',
+            name='image',
+            field=models.FilePathField(path='/img'),
+>>>>>>> 94a81eb432a52582e503668e85b4cc9249584108
         ),
     ]

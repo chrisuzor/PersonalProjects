@@ -47,6 +47,7 @@ def restart():
     print("System restarts")
 
 
+<<<<<<< HEAD
 def log(descriptor):
     # Implement the decorator here
     def decorator(function):
@@ -72,5 +73,7 @@ def lambdaMap(arr):
     )
 
 
+=======
+>>>>>>> 94a81eb432a52582e503668e85b4cc9249584108
 shutdown()
 restart()

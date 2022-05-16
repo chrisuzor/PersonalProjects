@@ -18,9 +18,15 @@ all(is_prime(x) for x in numbers)
 x = 42
 
 validation_conditions = (
+<<<<<<< HEAD
     isinstance(x, int),
     0 <= x <= 100,
     x % 2 == 0,
+=======
+     isinstance(x, int),
+     0 <= x <= 100,
+     x % 2 == 0,
+>>>>>>> 94a81eb432a52582e503668e85b4cc9249584108
 )
 
 if all(validation_conditions):
@@ -42,6 +48,7 @@ numbers = ["1", "2", "3.0"]
 all(number.isdecimal() for number in numbers)
 
 
+<<<<<<< HEAD
 raw_data = [
     ["name", "job", "email"],
     ["Linda", "Technical Lead", ""],
@@ -54,3 +61,15 @@ raw_data = [
 clean_data = list(filter(all, raw_data))
 
 clean_data_ = [row for row in raw_data if all(row)]
+=======
+raw_data = [['name', 'job', 'email'],
+ ['Linda', 'Technical Lead', ''],
+ ['Joe', 'Senior Web Developer', 'joe@example.com'],
+ ['Lara', 'Project Manager', 'lara@example.com'],
+ ['David', '', 'david@example.com'],
+ ['Jane', 'Senior Python Developer', 'jane@example.com']]
+
+clean_data = list(filter(all, raw_data))
+
+clean_data_ = [row for row in raw_data if all(row)]
+>>>>>>> 94a81eb432a52582e503668e85b4cc9249584108
