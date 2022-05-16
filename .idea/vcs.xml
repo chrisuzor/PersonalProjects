@@ -3,5 +3,9 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/flask_telebot" vcs="Git" />
+<<<<<<< HEAD
+    <mapping directory="$PROJECT_DIR$/senior-backend-ujxbaw" vcs="Git" />
+=======
+>>>>>>> 94a81eb432a52582e503668e85b4cc9249584108
   </component>
 </project>

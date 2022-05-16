@@ -13,4 +13,8 @@ else
   IFS=' ' read -r -a array <<< "$container"
   docker restart "${array[@]: -1:1}"
 fi
+<<<<<<< HEAD
 done
+=======
+done
+>>>>>>> 94a81eb432a52582e503668e85b4cc9249584108
