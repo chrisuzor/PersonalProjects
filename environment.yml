@@ -17,6 +17,7 @@ dependencies:
   # deployment
   - ansible==2.9.9
   - docker-compose
+  - boto3
 
   # testing/pep8
   - pre-commit

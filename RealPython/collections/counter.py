@@ -1,5 +1,4 @@
-from collections import defaultdict
-from collections import Counter
+from collections import Counter, defaultdict
 
 
 def top_three_letters(string):
@@ -17,5 +16,11 @@ def top_three_letters_best(string):
     return Counter(string).most_common(3)
 
 
-top_three_letters('kfnkfdnlndfknfdknkfdanjknakjnjknkdfnkjnsdfnjbnjdsfbnjbjsbkbsjbkjbeijbaibajbakfdka')
-print(top_three_letters_best('kfnkfdnlndfknfdknkfdanjknakjnjknkdfnkjnsdfnjbnjdsfbnjbjsbkbsjbkjbeijbaibajbakfdka'))
+top_three_letters(
+    "kfnkfdnlndfknfdknkfdanjknakjnjknkdfnkjnsdfnjbnjdsfbnjbjsbkbsjbkjbeijbaibajbakfdka"
+)
+print(
+    top_three_letters_best(
+        "kfnkfdnlndfknfdknkfdanjknakjnjknkdfnkjnsdfnjbnjdsfbnjbjsbkbsjbkjbeijbaibajbakfdka"
+    )
+)

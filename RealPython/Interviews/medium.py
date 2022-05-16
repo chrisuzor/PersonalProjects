@@ -16,7 +16,7 @@ def keypad_strings(keys):
             numbers_dict[_] = (char, key)
             char += key
     counter = 0
-    result = ''
+    result = ""
     for i, key in enumerate(keys):
         if numbers_dict[int(key)][0] == 0:
             continue
@@ -38,7 +38,7 @@ def keypad_strings(keys):
 
 
 # print(keypad_strings('33555336663663'))
-print(keypad_strings('111111111'))
-print(keypad_strings('22222'))
-print(keypad_strings('12345'))
-print(keypad_strings('4433555555666'))
+print(keypad_strings("111111111"))
+print(keypad_strings("22222"))
+print(keypad_strings("12345"))
+print(keypad_strings("4433555555666"))
