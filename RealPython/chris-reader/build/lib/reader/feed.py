@@ -1,7 +1,5 @@
 import feedparser
 
-import html2text
-
 
 _CACHED_FEEDS = dict()
 

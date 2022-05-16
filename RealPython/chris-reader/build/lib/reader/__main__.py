@@ -5,6 +5,7 @@ import sys
 from reader import feed
 from reader import viewer
 
+
 def main():
     """Read the Real Python article feed"""
     # Read URL of the Real Python feed from config file
@@ -22,6 +23,7 @@ def main():
         site = feed.get_site(url)
         titles = feed.get_titles(url)
         viewer.show_list(site, titles)
+
 
 if __name__ == "__main__":
     main()

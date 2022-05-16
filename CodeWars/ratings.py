@@ -19,6 +19,6 @@ def countDecreasingRatings(ratings):
     return sum(ratings_dict.values())
 
 
-print(countDecreasingRatings([4,3,5,4,3]))
-print(countDecreasingRatings([4,2,3,1]))
-print(countDecreasingRatings([2,1,3]))
+print(countDecreasingRatings([4, 3, 5, 4, 3]))
+print(countDecreasingRatings([4, 2, 3, 1]))
+print(countDecreasingRatings([2, 1, 3]))
