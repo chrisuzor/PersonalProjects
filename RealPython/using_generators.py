@@ -1,10 +1,10 @@
 g = (i for i in range(6))
 
-print(g)
-
-print(next(g))
-
-print(next(g))
+# print(g)
+#
+# print(next(g))
+#
+# print(next(g))
 
 # Sum for list
 print(sum([i for i in range(1, 10001)]))
