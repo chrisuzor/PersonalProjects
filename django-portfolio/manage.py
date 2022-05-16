@@ -5,7 +5,11 @@ import sys
 
 
 def main():
+<<<<<<< HEAD
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "portfolio.settings")
+=======
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'portfolio.settings')
+>>>>>>> 94a81eb432a52582e503668e85b4cc9249584108
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -17,5 +21,9 @@ def main():
     execute_from_command_line(sys.argv)
 
 
+<<<<<<< HEAD
+if __name__ == "__main__":
+=======
 if __name__ == '__main__':
+>>>>>>> 94a81eb432a52582e503668e85b4cc9249584108
     main()

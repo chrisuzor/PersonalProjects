@@ -47,5 +47,33 @@ def restart():
     print("System restarts")
 
 
+<<<<<<< HEAD
+def log(descriptor):
+    # Implement the decorator here
+    def decorator(function):
+        def wrapper(*args, **kwargs):
+            digits = ",".join(map(str, args))
+            msg = "LOG: " + function.__name__ + "(" + digits + ")\n"
+            print(msg)
+            descriptor.write(msg)
+            result = function(*args, **kwargs)
+            return result
+
+        return wrapper
+
+    return decorator
+
+
+def lambdaMap(arr):
+    ans = map(
+        lambda x: list(map(lambda z: z ** 2, list(filter(lambda y: y > 0, x))))
+        # Complete the lambda function below.  It begins in the non-alterable code above
+        ,
+        arr,
+    )
+
+
+=======
+>>>>>>> 94a81eb432a52582e503668e85b4cc9249584108
 shutdown()
 restart()
